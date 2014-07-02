@@ -1,4 +1,10 @@
 require "bundler/setup"
+
+if ENV["TRAVIS"]
+  require "coveralls"
+  Coveralls.wear!
+end
+
 require "faraday/detailed_logger"
 
 RSpec.configure do |config|
