@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = Faraday::DetailedLogger::VERSION
   spec.authors       = ["Envy Labs"]
   spec.email         = [""]
-  spec.summary       = %q{A request and response logger for Faraday.}
+  spec.summary       = %q{A detailed request and response logger for Faraday.}
   spec.description   = %q{A Faraday middleware for logging request and response activity including method, URI, headers, and body at varying log levels.}
   spec.homepage      = ""
   spec.license       = "MIT"
