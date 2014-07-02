@@ -6,10 +6,10 @@ require 'faraday/detailed_logger/version'
 Gem::Specification.new do |spec|
   spec.name          = "faraday-detailed_logger"
   spec.version       = Faraday::DetailedLogger::VERSION
-  spec.authors       = ["Nathaniel Bibler"]
-  spec.email         = ["TODO: Write your email address"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.authors       = ["Envy Labs"]
+  spec.email         = [""]
+  spec.summary       = %q{A request and response logger for Faraday.}
+  spec.description   = %q{A Faraday middleware for logging request and response activity including method, URI, headers, and body at varying log levels.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
