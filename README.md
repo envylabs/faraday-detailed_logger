@@ -1,5 +1,10 @@
 # Faraday::DetailedLogger
 
+[![Gem Version](http://img.shields.io/gem/v/faraday-detailed_logger.svg)](http://rubygems.org/gems/faraday-detailed_logger)
+[![Build Status](http://img.shields.io/travis/envylabs/faraday-detailed_logger/master.svg)](https://travis-ci.org/envylabs/faraday-detailed_logger)
+[![Code Climate](http://img.shields.io/codeclimate/github/envylabs/faraday-detailed_logger.svg)](https://codeclimate.com/github/envylabs/faraday-detailed_logger)
+[![Dependency Status](https://gemnasium.com/envylabs/faraday-detailed_logger.svg)](https://gemnasium.com/envylabs/faraday-detailed_logger)
+
 A Faraday middleware used for providing debug- and info-level logging
 information. The request and response logs follow very closely with cURL output
 for ease of understanding.
