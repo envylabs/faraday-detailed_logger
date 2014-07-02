@@ -71,6 +71,40 @@ faraday.response :detailed_logger, Rails.logger
 
 ### Example output
 
+Because logs generally work best with a single line of data per entry, the
+DEBUG-level output which contains the headers and bodies is inspected prior to
+logging. This crushes down and slightly manipulates the multi-line output one
+would expect when performing a verbose cURL operation into a log-compatible
+single line.
+
+Below is a contrived example showing how this works. Presuming cURL generated
+the following request and received the associated response:
+
+```bash
+$ curl -v -d "requestbody=content" http://sushi.com/temaki
+> GET /temaki HTTP/1.1
+> User-Agent: Faraday::DetailedLogger
+> Host: sushi.com
+> Content-Type: application/x-www-form-urlencoded
+> 
+> requestbody=content
+>
+< HTTP/1.1 200 OK
+< Content-Type: application/json
+< 
+< {"order_id":"1"}
+```
+
+The Faraday::DetailedLogger would log something similar to the following, with
+DEBUG-level logging enabled:
+
+```plain
+POST http://sushi.com/nigirizushi
+"User-Agent: Faraday::DetailedLogger\nContent-Type: application/x-www-form-urlencoded\n\nrequestbody=content"
+HTTP 200
+"Content-Type: application/json\n\n{\"order_id\":\"1\"}"
+```
+
 #### Request logging
 
 Log output for the request-portion of an HTTP interaction:
