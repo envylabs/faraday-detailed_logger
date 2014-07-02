@@ -1,7 +1,7 @@
 require "faraday/detailed_logger/version"
+require "faraday/detailed_logger/middleware"
 
 module Faraday
   module DetailedLogger
-    # Your code goes here...
   end
 end
