@@ -7,6 +7,8 @@
 
 ## [HEAD][unreleased] / unreleased
 
+* No significant changes.
+
 ## [1.0.0][v1.0.0] / 2014-07-02
 
 * Stable release.
