@@ -1,4 +1,4 @@
-Copyright (c) 2014 Nathaniel Bibler
+Copyright (c) 2014 Envy Labs, LLC
 
 MIT License
 
