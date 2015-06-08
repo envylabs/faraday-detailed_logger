@@ -6,7 +6,6 @@ if ENV['TRAVIS']
   require 'coveralls'
   Coveralls.wear!
 end
-require 'simplecov' if ENV['COVERAGE']
 require 'faraday/detailed_logger'
 
 RSpec.configure do |config|
