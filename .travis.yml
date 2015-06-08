@@ -2,6 +2,8 @@ language: ruby
 cache: bundler
 rvm:
   - 1.9.3
-  - 2.1.1
+  - 2.2.2
+env:
+  - COVERAGE=true
 notifications:
   email: false

@@ -2,12 +2,12 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
-if ENV["TRAVIS"]
-  require "coveralls"
+if ENV['TRAVIS']
+  require 'coveralls'
   Coveralls.wear!
 end
-
-require "faraday/detailed_logger"
+require 'simplecov' if ENV['COVERAGE']
+require 'faraday/detailed_logger'
 
 RSpec.configure do |config|
   config.filter_run :focus
