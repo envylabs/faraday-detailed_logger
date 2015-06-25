@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = [""]
   spec.summary       = %q{A detailed request and response logger for Faraday.}
   spec.description   = %q{A Faraday middleware for logging request and response activity including method, URI, headers, and body at varying log levels.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/envylabs/faraday-detailed_logger"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
