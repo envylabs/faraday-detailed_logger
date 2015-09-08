@@ -8,7 +8,7 @@
 
 ## [HEAD][unreleased] / unreleased
 
-* No significant changes.
+* Log HTTP 4XX and HTTP 5XX responses at a WARN level.
 
 ## [1.0.0][v1.0.0] / 2014-07-02
 

@@ -56,7 +56,8 @@ module Faraday
       # Returns nothing.
       #
       def on_complete(env)
-        @logger.info(@progname) { "HTTP #{env[:status]}" }
+        status = env[:status]
+        log_response_status(@progname, status) { "HTTP #{status}" }
         @logger.debug(@progname) { curl_output(env[:response_headers], env[:body]).inspect }
       end
 
@@ -67,6 +68,15 @@ module Faraday
       def curl_output(headers, body)
         string = headers.collect { |k,v| "#{k}: #{v}" }.join("\n")
         string + "\n\n#{body}"
+      end
+
+      def log_response_status(progname, status, &block)
+        case status
+        when 200..399
+          @logger.info(progname, &block)
+        else
+          @logger.warn(progname, &block)
+        end
       end
     end
   end
