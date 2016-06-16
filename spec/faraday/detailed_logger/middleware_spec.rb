@@ -106,7 +106,8 @@ CURL
           [200, {"Content-Type" => "application/json"}, "{\"order_id\":\"1\"}"]
         }
         stub.get("/oaiso") { |env|
-          [env.params["c"].to_i, {"Content-Type" => "application/json"}, env.params["c"]]
+          code = env.respond_to?(:params) ? env.params["c"] : env.fetch(:params).fetch("c")
+          [code.to_i, {"Content-Type" => "application/json"}, code]
         }
       end
     end
