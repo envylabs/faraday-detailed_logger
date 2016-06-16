@@ -8,6 +8,10 @@
 
 ## [HEAD][] / unreleased
 
+* No significant changes.
+
+## [1.1.0][] / 2016-06-15
+
 * Log HTTP 4XX and HTTP 5XX responses at a WARN level.
 
 ## [1.0.0][] / 2014-07-02
@@ -15,4 +19,5 @@
 * Stable release.
 
 [1.0.0]: https://github.com/envylabs/faraday-detailed_logger/tree/v1.0.0
-[HEAD]: https://github.com/envylabs/faraday-detailed_logger/compare/v1.0.0...master
+[1.1.0]: https://github.com/envylabs/faraday-detailed_logger/compare/v1.0.0...v1.1.0
+[HEAD]: https://github.com/envylabs/faraday-detailed_logger/compare/v1.1.0...master
