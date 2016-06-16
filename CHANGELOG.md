@@ -6,13 +6,13 @@
 [![Coverage Status](https://img.shields.io/coveralls/envylabs/faraday-detailed_logger.svg)](https://coveralls.io/r/envylabs/faraday-detailed_logger)
 [![Dependency Status](https://gemnasium.com/envylabs/faraday-detailed_logger.svg)](https://gemnasium.com/envylabs/faraday-detailed_logger)
 
-## [HEAD][unreleased] / unreleased
+## [HEAD][] / unreleased
 
 * Log HTTP 4XX and HTTP 5XX responses at a WARN level.
 
-## [1.0.0][v1.0.0] / 2014-07-02
+## [1.0.0][] / 2014-07-02
 
 * Stable release.
 
-[unreleased]: https://github.com/envylabs/faraday-detailed_logger/compare/v1.0.0...master
-[v1.0.0]: https://github.com/envylabs/faraday-detailed_logger/tree/v1.0.0
+[1.0.0]: https://github.com/envylabs/faraday-detailed_logger/tree/v1.0.0
+[HEAD]: https://github.com/envylabs/faraday-detailed_logger/compare/v1.0.0...master
