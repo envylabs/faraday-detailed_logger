@@ -1,9 +1,12 @@
 before_install: gem install bundler -v 1.12.5
 cache: bundler
+gemfile:
+  - gemfiles/faraday_0.8.gemfile
+  - gemfiles/faraday_current.gemfile
 language: ruby
 notifications:
   email: false
 rvm:
   - 1.9.3
-  - 2.2.2
+  - 2.3.1
 sudo: false
