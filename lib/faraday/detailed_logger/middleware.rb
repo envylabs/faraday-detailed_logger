@@ -25,14 +25,12 @@ module Faraday
       # app - A Faraday-compatible middleware stack or application.
       # logger - A Logger-compatible object to which the log information will
       #          be recorded.
-      # progname - A String containing a program name to use when logging.
       #
       # Returns a Logger instance.
       #
-      def initialize(app, logger = nil, progname = nil)
+      def initialize(app, logger = nil)
         super(app)
         @logger = logger || self.class.default_logger
-        @progname = progname
       end
 
       # Public: Used by Faraday to execute the middleware during the
@@ -43,8 +41,8 @@ module Faraday
       # Returns the result of the parent application execution.
       #
       def call(env)
-        @logger.info(@progname) { "#{env[:method].upcase} #{env[:url]}" }
-        @logger.debug(@progname) { curl_output(env[:request_headers], env[:body]).inspect }
+        @logger.info { "#{env[:method].upcase} #{env[:url]}" }
+        @logger.debug { curl_output(env[:request_headers], env[:body]).inspect }
         super
       end
 
@@ -57,8 +55,8 @@ module Faraday
       #
       def on_complete(env)
         status = env[:status]
-        log_response_status(@progname, status) { "HTTP #{status}" }
-        @logger.debug(@progname) { curl_output(env[:response_headers], env[:body]).inspect }
+        log_response_status(status) { "HTTP #{status}" }
+        @logger.debug { curl_output(env[:response_headers], env[:body]).inspect }
       end
 
 
@@ -70,12 +68,12 @@ module Faraday
         string + "\n\n#{body}"
       end
 
-      def log_response_status(progname, status, &block)
+      def log_response_status(status, &block)
         case status
         when 200..399
-          @logger.info(progname, &block)
+          @logger.info(&block)
         else
-          @logger.warn(progname, &block)
+          @logger.warn(&block)
         end
       end
     end

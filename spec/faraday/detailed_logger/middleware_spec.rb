@@ -4,17 +4,6 @@ require "logger"
 require "stringio"
 
 describe Faraday::DetailedLogger::Middleware do
-  it "passes through the given progname to the logger" do
-    logger = Logger.new(log = StringIO.new)
-
-    expect {
-      connection(logger, "TESTPROGNAME").get("/temaki")
-    }.to change {
-      log.rewind
-      !!(log.read =~/\bTESTPROGNAME\b/)
-    }.to(true)
-  end
-
   it "logs the request method at an INFO level" do
     logger = Logger.new(log = StringIO.new)
 
@@ -94,10 +83,10 @@ CURL
   private
 
 
-  def connection(logger = nil, progname = nil)
+  def connection(logger = nil)
     Faraday.new(:url => "http://sushi.com") do |builder|
       builder.request(:url_encoded)
-      builder.response(:detailed_logger, logger, progname)
+      builder.response(:detailed_logger, logger)
       builder.adapter(:test) do |stub|
         stub.get("/temaki") {
           [200, {"Content-Type" => "text/plain"}, "temaki"]

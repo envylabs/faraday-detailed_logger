@@ -8,7 +8,8 @@
 
 ## [HEAD][] / unreleased
 
-* No significant changes.
+* Remove Logger `progname` support/configuration. Varying the progname appears
+  to make logging in a syslog-like environment unnecessarily more difficult.
 
 ## [1.1.0][] / 2016-06-15
 
