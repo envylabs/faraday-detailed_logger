@@ -8,6 +8,10 @@
 
 ## [HEAD][] / unreleased
 
+* No significant changes.
+
+## [2.0.0][] / 2016-07-08
+
 * Remove Logger `progname` support/configuration. Varying the progname appears
   to make logging in a syslog-like environment unnecessarily more difficult.
 * Add tagging support to the logger. Any number of tags may be given which will
@@ -28,4 +32,5 @@
 
 [1.0.0]: https://github.com/envylabs/faraday-detailed_logger/tree/v1.0.0
 [1.1.0]: https://github.com/envylabs/faraday-detailed_logger/compare/v1.0.0...v1.1.0
-[HEAD]: https://github.com/envylabs/faraday-detailed_logger/compare/v1.1.0...master
+[2.0.0]: https://github.com/envylabs/faraday-detailed_logger/compare/v1.1.0...v2.0.0
+[HEAD]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.0.0...master
