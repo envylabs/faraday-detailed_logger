@@ -75,6 +75,13 @@ Or, perhaps use your Rails logger:
 faraday.response :detailed_logger, Rails.logger
 ```
 
+Further, you might like to tag logged output to make it easily located in your
+logs:
+
+```ruby
+faraday.response :detailed_logger, Rails.logger, "Sushi Request"
+```
+
 ### Example output
 
 Because logs generally work best with a single line of data per entry, the

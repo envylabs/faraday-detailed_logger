@@ -10,6 +10,13 @@
 
 * Remove Logger `progname` support/configuration. Varying the progname appears
   to make logging in a syslog-like environment unnecessarily more difficult.
+* Add tagging support to the logger. Any number of tags may be given which will
+  be prepended to all lines logged. This is largely follows the
+  ActiveSupport::TaggedLogging log functionality. "Old" usages of this library
+  will treat any previous `progname` strings as a tag and continue to record
+  them to the log. Even though the progname is now logged as a tag, this is
+  still considered a breaking change just in case system configurations were
+  dependent on the progname for log output redirection (syslog).
 
 ## [1.1.0][] / 2016-06-15
 

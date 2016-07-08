@@ -4,6 +4,16 @@ require "logger"
 require "stringio"
 
 describe Faraday::DetailedLogger::Middleware do
+  it "logs with the configured tags prepended to each line" do
+    logger = Logger.new(log = StringIO.new)
+
+    connection(logger, %w[ebi]).get("/temaki")
+    log.rewind
+    log.readlines.each do |line|
+      expect(line).to match(/: \[ebi\] /)
+    end
+  end
+
   it "logs the request method at an INFO level" do
     logger = Logger.new(log = StringIO.new)
 
@@ -83,10 +93,10 @@ CURL
   private
 
 
-  def connection(logger = nil)
+  def connection(logger = nil, *tags)
     Faraday.new(:url => "http://sushi.com") do |builder|
       builder.request(:url_encoded)
-      builder.response(:detailed_logger, logger)
+      builder.response(:detailed_logger, logger, *tags)
       builder.adapter(:test) do |stub|
         stub.get("/temaki") {
           [200, {"Content-Type" => "text/plain"}, "temaki"]

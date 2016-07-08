@@ -1,4 +1,5 @@
 require "faraday"
+require "faraday/detailed_logger/tagged_logging"
 
 module Faraday
   module DetailedLogger
@@ -25,12 +26,14 @@ module Faraday
       # app - A Faraday-compatible middleware stack or application.
       # logger - A Logger-compatible object to which the log information will
       #          be recorded.
+      # tags - An optional array of tags to apply to the log output.
       #
       # Returns a Logger instance.
       #
-      def initialize(app, logger = nil)
+      def initialize(app, logger = nil, *tags)
         super(app)
-        @logger = logger || self.class.default_logger
+        @logger = TaggedLogging.new(logger || self.class.default_logger)
+        @tags = tags
       end
 
       # Public: Used by Faraday to execute the middleware during the
@@ -41,8 +44,10 @@ module Faraday
       # Returns the result of the parent application execution.
       #
       def call(env)
-        @logger.info { "#{env[:method].upcase} #{env[:url]}" }
-        @logger.debug { curl_output(env[:request_headers], env[:body]).inspect }
+        logger.tagged(*tags) do
+          logger.info { "#{env[:method].upcase} #{env[:url]}" }
+          logger.debug { curl_output(env[:request_headers], env[:body]).inspect }
+        end
         super
       end
 
@@ -55,13 +60,19 @@ module Faraday
       #
       def on_complete(env)
         status = env[:status]
-        log_response_status(status) { "HTTP #{status}" }
-        @logger.debug { curl_output(env[:response_headers], env[:body]).inspect }
+
+        logger.tagged(*tags) do
+          log_response_status(status) { "HTTP #{status}" }
+          logger.debug { curl_output(env[:response_headers], env[:body]).inspect }
+        end
       end
 
 
       private
 
+
+      attr_reader :logger
+      attr_reader :tags
 
       def curl_output(headers, body)
         string = headers.collect { |k,v| "#{k}: #{v}" }.join("\n")
@@ -71,9 +82,9 @@ module Faraday
       def log_response_status(status, &block)
         case status
         when 200..399
-          @logger.info(&block)
+          logger.info(&block)
         else
-          @logger.warn(&block)
+          logger.warn(&block)
         end
       end
     end
