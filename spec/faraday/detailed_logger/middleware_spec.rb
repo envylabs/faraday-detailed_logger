@@ -4,6 +4,12 @@ require "logger"
 require "stringio"
 
 describe Faraday::DetailedLogger::Middleware do
+  it "defaults to logging to STDOUT" do
+    expect {
+      connection(nil).get('/temaki')
+    }.to output.to_stdout
+  end
+
   it "logs with the configured tags prepended to each line" do
     logger = Logger.new(log = StringIO.new)
 
