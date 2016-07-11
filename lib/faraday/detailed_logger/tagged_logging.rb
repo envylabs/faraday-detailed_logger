@@ -1,4 +1,4 @@
-require 'logger'
+require "logger"
 
 module Faraday
   module DetailedLogger
@@ -10,7 +10,9 @@ module Faraday
       extend Forwardable
 
       module Formatter
-        BLANK = lambda { |value| value.respond_to?(:empty?) ? !!value.empty? : !value }
+        BLANK = lambda do |value|
+          value.respond_to?(:empty?) ? !!value.empty? : !value
+        end
 
         def call(severity, timestamp, progname, msg)
           super(severity, timestamp, progname, "#{tags_text}#{msg}")
@@ -38,19 +40,19 @@ module Faraday
         end
 
         def current_tags
-          @thread_key ||= "faraday_detailed_logger_tagged_logging_tags:#{object_id}".freeze
+          @thread_key ||= "faraday_detailed_logger_tags:#{object_id}".freeze
           Thread.current[@thread_key] ||= []
         end
 
         private
-          def tags_text
-            tags = current_tags
-            if tags.any?
-              tags.collect { |tag| "[#{tag}] " }.join
-            end
-          end
-      end
 
+        def tags_text
+          tags = current_tags
+          if tags.any?
+            tags.map { |tag| "[#{tag}] " }.join
+          end
+        end
+      end
 
       def self.new(logger)
         unless logger.respond_to?(:tagged)

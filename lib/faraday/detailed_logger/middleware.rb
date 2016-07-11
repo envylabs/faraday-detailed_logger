@@ -14,12 +14,10 @@ module Faraday
     # greater level, this is not a concern.
     #
     class Middleware < Faraday::Response::Middleware
-
       def self.default_logger
         require "logger"
         ::Logger.new($stdout)
       end
-
 
       # Public: Initialize a new Logger middleware.
       #
@@ -46,7 +44,7 @@ module Faraday
       def call(env)
         logger.tagged(*tags) do
           logger.info { "#{env[:method].upcase} #{env[:url]}" }
-          logger.debug { curl_output(env[:request_headers], env[:body]).inspect }
+          logger.debug { curl_request_output(env) }
         end
         super
       end
@@ -63,19 +61,25 @@ module Faraday
 
         logger.tagged(*tags) do
           log_response_status(status) { "HTTP #{status}" }
-          logger.debug { curl_output(env[:response_headers], env[:body]).inspect }
+          logger.debug { curl_response_output(env) }
         end
       end
 
-
       private
-
 
       attr_reader :logger
       attr_reader :tags
 
+      def curl_request_output(env)
+        curl_output(env[:request_headers], env[:body]).inspect
+      end
+
+      def curl_response_output(env)
+        curl_output(env[:response_headers], env[:body]).inspect
+      end
+
       def curl_output(headers, body)
-        string = headers.collect { |k,v| "#{k}: #{v}" }.join("\n")
+        string = headers.map { |k, v| "#{k}: #{v}" }.join("\n")
         string + "\n\n#{body}"
       end
 
@@ -91,4 +95,6 @@ module Faraday
   end
 end
 
-Faraday::Response.register_middleware(:detailed_logger => Faraday::DetailedLogger::Middleware)
+Faraday::Response.register_middleware({
+  detailed_logger: Faraday::DetailedLogger::Middleware
+})
