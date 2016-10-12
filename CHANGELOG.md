@@ -8,6 +8,10 @@
 
 ## [HEAD][] / unreleased
 
+* No significant changes.
+
+## [2.1.0][] / 2016-10-12
+
 * Catch StandardError exceptions to log and re-raise them.
 
 ## [2.0.0][] / 2016-07-08
@@ -33,4 +37,5 @@
 [1.0.0]: https://github.com/envylabs/faraday-detailed_logger/tree/v1.0.0
 [1.1.0]: https://github.com/envylabs/faraday-detailed_logger/compare/v1.0.0...v1.1.0
 [2.0.0]: https://github.com/envylabs/faraday-detailed_logger/compare/v1.1.0...v2.0.0
-[HEAD]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.0.0...master
+[2.1.0]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.0.0...v2.1.0
+[HEAD]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.1.0...master
