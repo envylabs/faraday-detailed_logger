@@ -8,7 +8,7 @@
 
 ## [HEAD][] / unreleased
 
-* No significant changes.
+* Catch StandardError exceptions to log and re-raise them.
 
 ## [2.0.0][] / 2016-07-08
 

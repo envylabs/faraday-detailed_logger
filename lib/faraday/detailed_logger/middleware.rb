@@ -47,6 +47,9 @@ module Faraday
           logger.debug { curl_request_output(env) }
         end
         super
+      rescue
+        logger.error { "#{$!.class.name} - #{$!.message} (#{$!.backtrace.first})" }
+        raise
       end
 
       # Internal: Used by Faraday as a callback hook to process a network

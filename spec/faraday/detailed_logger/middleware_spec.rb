@@ -4,6 +4,8 @@ require "logger"
 require "stringio"
 
 describe Faraday::DetailedLogger::Middleware do
+  TestError = Class.new(StandardError)
+
   it "defaults to logging to STDOUT" do
     expect { connection(nil).get("/temaki") }.to output.to_stdout
   end
@@ -97,6 +99,17 @@ CURL
     expect(log.read).to match(/\bDEBUG\b.+#{Regexp.escape(curl.inspect)}/)
   end
 
+  it "logs errors which occur during the request and re-raises them through" do
+    logger = Logger.new(log = StringIO.new)
+
+    expect {
+      connection(logger).get("/error")
+    }.to raise_error(TestError, "An error occurred during the request")
+
+    log.rewind
+    expect(log.read).to match(/\bERROR\b.+\bTestError - An error occurred during the request \(.+\)$/)
+  end
+
   private
 
   def connection(logger = nil, *tags)
@@ -113,6 +126,9 @@ CURL
         stub.get("/oaiso") do |env|
           code = env.respond_to?(:params) ? env.params["c"] : env[:params]["c"]
           [code.to_i, { "Content-Type" => "application/json" }, code]
+        end
+        stub.get("/error") do
+          raise TestError, "An error occurred during the request"
         end
       end
     end
