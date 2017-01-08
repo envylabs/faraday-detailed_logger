@@ -5,6 +5,7 @@
 [![Code Climate](https://img.shields.io/codeclimate/github/envylabs/faraday-detailed_logger.svg)](https://codeclimate.com/github/envylabs/faraday-detailed_logger)
 [![Coverage Status](https://img.shields.io/coveralls/envylabs/faraday-detailed_logger.svg)](https://coveralls.io/r/envylabs/faraday-detailed_logger)
 [![Dependency Status](https://gemnasium.com/envylabs/faraday-detailed_logger.svg)](https://gemnasium.com/envylabs/faraday-detailed_logger)
+[![Inline docs](https://inch-ci.org/github/envylabs/faraday-detailed_logger.svg?branch=master)](https://inch-ci.org/github/envylabs/faraday-detailed_logger)
 
 ## [HEAD][] / unreleased
 
