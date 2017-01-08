@@ -1,6 +1,6 @@
 # Faraday::DetailedLogger changelog
 
-[![Gem Version](https://img.shields.io/gem/v/faraday-detailed_logger.svg)](http://rubygems.org/gems/faraday-detailed_logger)
+[![Gem Version](https://img.shields.io/gem/v/faraday-detailed_logger.svg)](https://rubygems.org/gems/faraday-detailed_logger)
 [![Build Status](https://img.shields.io/travis/envylabs/faraday-detailed_logger/master.svg)](https://travis-ci.org/envylabs/faraday-detailed_logger)
 [![Code Climate](https://img.shields.io/codeclimate/github/envylabs/faraday-detailed_logger.svg)](https://codeclimate.com/github/envylabs/faraday-detailed_logger)
 [![Coverage Status](https://img.shields.io/coveralls/envylabs/faraday-detailed_logger.svg)](https://coveralls.io/r/envylabs/faraday-detailed_logger)
