@@ -18,6 +18,11 @@ module Faraday
       attr_reader :tags
 
 
+      # Internal: Used as the Middleware's logger in the case that an explicit
+      # logger is not provided.
+      #
+      # Returns a Logger instance.
+      #
       def self.default_logger
         require "logger"
         ::Logger.new($stdout)
