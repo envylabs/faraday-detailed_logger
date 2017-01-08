@@ -14,10 +14,15 @@ module Faraday
     # greater level, this is not a concern.
     #
     class Middleware < Faraday::Response::Middleware
+      attr_reader :logger
+      attr_reader :tags
+
+
       def self.default_logger
         require "logger"
         ::Logger.new($stdout)
       end
+
 
       # Public: Initialize a new Logger middleware.
       #
@@ -69,9 +74,6 @@ module Faraday
       end
 
       private
-
-      attr_reader :logger
-      attr_reader :tags
 
       def curl_request_output(env)
         curl_output(env[:request_headers], env[:body]).inspect
