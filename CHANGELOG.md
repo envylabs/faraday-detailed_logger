@@ -10,6 +10,11 @@
 
 * No significant changes.
 
+## [2.1.1][] / 2016-01-07
+
+* Require faraday `~> 0.8`. This change only makes explicit the minimum version
+  of faraday which is supported.
+
 ## [2.1.0][] / 2016-10-12
 
 * Catch StandardError exceptions to log and re-raise them.
@@ -38,4 +43,5 @@
 [1.1.0]: https://github.com/envylabs/faraday-detailed_logger/compare/v1.0.0...v1.1.0
 [2.0.0]: https://github.com/envylabs/faraday-detailed_logger/compare/v1.1.0...v2.0.0
 [2.1.0]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.0.0...v2.1.0
-[HEAD]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.1.0...master
+[2.1.1]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.1.0...v2.1.1
+[HEAD]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.1.1...master
