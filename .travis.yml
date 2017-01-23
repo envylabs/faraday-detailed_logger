@@ -1,4 +1,4 @@
-before_install: gem install bundler -v 1.13.7
+before_install: gem install bundler -v 1.14.2
 cache: bundler
 gemfile:
   - gemfiles/faraday_0.8.gemfile
