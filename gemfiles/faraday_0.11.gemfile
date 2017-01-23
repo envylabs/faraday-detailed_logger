@@ -2,6 +2,6 @@
 
 source "https://rubygems.org"
 
-gem "faraday", :git => "https://github.com/lostisland/faraday.git"
+gem "faraday", "~> 0.11.0"
 
 gemspec :path => "../"

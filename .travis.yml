@@ -4,12 +4,13 @@ gemfile:
   - gemfiles/faraday_0.8.gemfile
   - gemfiles/faraday_0.9.gemfile
   - gemfiles/faraday_0.10.gemfile
+  - gemfiles/faraday_0.11.gemfile
   - gemfiles/faraday_canary.gemfile
 language: ruby
 matrix:
-  fast_finish: true
   allow_failures:
     - gemfile: gemfiles/faraday_canary.gemfile
+  fast_finish: true
 notifications:
   email: false
 rvm:
