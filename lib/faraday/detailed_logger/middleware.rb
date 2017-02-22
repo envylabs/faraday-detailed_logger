@@ -15,6 +15,7 @@ module Faraday
     #
     class Middleware < Faraday::Response::Middleware
       attr_reader :logger
+      attr_reader :truncate_at
       attr_reader :tags
 
 
@@ -38,9 +39,10 @@ module Faraday
       #
       # Returns a Logger instance.
       #
-      def initialize(app, logger = nil, *tags)
+      def initialize(app, logger: nil, truncate_at: nil, tags: [])
         super(app)
         @logger = TaggedLogging.new(logger || self.class.default_logger)
+        @truncate_at = truncate_at
         @tags = tags
       end
 
@@ -90,7 +92,7 @@ module Faraday
 
       def curl_output(headers, body)
         string = headers.map { |k, v| "#{k}: #{v}" }.join("\n")
-        string + "\n\n#{body}"
+        string + "\n\n#{truncate(body)}"
       end
 
       def log_response_status(status, &block)
@@ -100,6 +102,18 @@ module Faraday
         else
           logger.warn(&block)
         end
+      end
+
+      def truncate(text)
+        return text if text.nil? || truncate_at.nil?
+
+        text = text.to_s
+
+        return text unless text.length > truncate_at
+
+        omission = "..."
+        length_with_room_for_omission = truncate_at - omission.length
+        "#{text[0, length_with_room_for_omission]}#{omission}"
       end
     end
   end

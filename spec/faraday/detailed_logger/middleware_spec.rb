@@ -13,11 +13,19 @@ describe Faraday::DetailedLogger::Middleware do
   it "logs with the configured tags prepended to each line" do
     logger = Logger.new(log = StringIO.new)
 
-    connection(logger, %w[ebi]).get("/temaki")
+    connection(logger, { tags: %w[ebi] }).get("/temaki")
     log.rewind
     log.readlines.each do |line|
       expect(line).to match(/: \[ebi\] /)
     end
+  end
+
+  it "truncates log if truncate_at is set" do
+    logger = Logger.new(log = StringIO.new)
+
+    connection(logger, { truncate_at: 5 }).get("/temaki")
+    log.rewind
+    expect(log.readlines.last).to match(/\wte...\w/)
   end
 
   it "logs the request method at an INFO level" do
@@ -112,10 +120,13 @@ CURL
 
   private
 
-  def connection(logger = nil, *tags)
+  def connection(logger, tags: [], truncate_at: nil)
     Faraday.new({ url: "http://sushi.com" }) do |builder|
       builder.request(:url_encoded)
-      builder.response(:detailed_logger, logger, *tags)
+      builder.response(
+        :detailed_logger,
+        { logger: logger, tags: tags, truncate_at: truncate_at }
+      )
       builder.adapter(:test) do |stub|
         stub.get("/temaki") do
           [200, { "Content-Type" => "text/plain" }, "temaki"]
