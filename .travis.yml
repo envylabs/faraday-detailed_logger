@@ -5,6 +5,7 @@ gemfile:
   - gemfiles/faraday_0.9.gemfile
   - gemfiles/faraday_0.10.gemfile
   - gemfiles/faraday_0.11.gemfile
+  - gemfiles/faraday_0.12.gemfile
   - gemfiles/faraday_canary.gemfile
 language: ruby
 matrix:
@@ -14,7 +15,6 @@ matrix:
 notifications:
   email: false
 rvm:
-  - 2.1.10
   - 2.2.6
   - 2.3.3
   - 2.4.0
