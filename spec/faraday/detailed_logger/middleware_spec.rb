@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require "spec_helper"
 
 require "logger"
 require "stringio"
 
-describe Faraday::DetailedLogger::Middleware do
+RSpec.describe Faraday::DetailedLogger::Middleware do
   TestError = Class.new(StandardError)
 
   it "defaults to logging to STDOUT" do

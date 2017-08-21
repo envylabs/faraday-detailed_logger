@@ -1,26 +1,28 @@
 # coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
+# frozen_string_literal: true
+
+lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
-if ENV['TRAVIS']
-  require 'coveralls'
+if ENV["TRAVIS"]
+  require "coveralls"
   Coveralls.wear!
 end
-require 'faraday/detailed_logger'
+require "faraday/detailed_logger"
 
 RSpec.configure do |config|
-  config.example_status_persistence_file_path = '.rspec_status'
+  Kernel.srand config.seed
+
+  config.disable_monkey_patching!
+  config.example_status_persistence_file_path = ".rspec_status"
   config.filter_run :focus
+  config.order = :random
+  config.profile_examples = 10
   config.run_all_when_everything_filtered = true
 
   if config.files_to_run.one?
-    config.default_formatter = 'doc'
+    config.default_formatter = "doc"
   end
-
-  config.profile_examples = 10
-  config.order = :random
-
-  Kernel.srand config.seed
 
   config.expect_with :rspec do |expectations|
     expectations.syntax = :expect
