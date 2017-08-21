@@ -9,6 +9,10 @@
 
 ## [HEAD][] / unreleased
 
+* No significant changes.
+
+## [2.1.2][] / 2016-08-21
+
 * Update the middleware to allow the `logger` and `tags` to be publicly
   accessible. This is not necessarily intended to be developer-used, but rather
   fix warnings in older versions of Ruby.
@@ -47,4 +51,5 @@
 [2.0.0]: https://github.com/envylabs/faraday-detailed_logger/compare/v1.1.0...v2.0.0
 [2.1.0]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.0.0...v2.1.0
 [2.1.1]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.1.0...v2.1.1
-[HEAD]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.1.1...master
+[2.1.2]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.1.1...v2.1.2
+[HEAD]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.1.2...master
