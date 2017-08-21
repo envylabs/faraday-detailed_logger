@@ -17,7 +17,7 @@
   accessible. This is not necessarily intended to be developer-used, but rather
   fix warnings in older versions of Ruby.
 
-## [2.1.1][] / 2016-01-07
+## [2.1.1][] / 2017-01-07
 
 * Require faraday `~> 0.8`. This change only makes explicit the minimum version
   of faraday which is supported.
