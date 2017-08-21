@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "logger"
 
 module Faraday
@@ -40,7 +42,7 @@ module Faraday
         end
 
         def current_tags
-          @thread_key ||= "faraday_detailed_logger_tags:#{object_id}".freeze
+          @thread_key ||= "faraday_detailed_logger_tags:#{object_id}"
           Thread.current[@thread_key] ||= []
         end
 

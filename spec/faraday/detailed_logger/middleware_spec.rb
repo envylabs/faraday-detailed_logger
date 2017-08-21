@@ -47,11 +47,11 @@ RSpec.describe Faraday::DetailedLogger::Middleware do
       user_agent: "Faraday::DetailedLogger"
     })
     log.rewind
-    curl = <<-CURL.strip
-User-Agent: Faraday::DetailedLogger
-Content-Type: application/x-www-form-urlencoded
+    curl = <<~CURL.strip
+      User-Agent: Faraday::DetailedLogger
+      Content-Type: application/x-www-form-urlencoded
 
-body=content
+      body=content
 CURL
     expect(log.read).to match(/\bDEBUG\b.+#{Regexp.escape(curl.inspect)}/)
   end
@@ -93,10 +93,10 @@ CURL
 
     connection(logger).post("/nigirizushi")
     log.rewind
-    curl = <<-CURL.strip
-Content-Type: application/json
+    curl = <<~CURL.strip
+      Content-Type: application/json
 
-{"id":"1"}
+      {"id":"1"}
 CURL
     expect(log.read).to match(/\bDEBUG\b.+#{Regexp.escape(curl.inspect)}/)
   end
@@ -104,12 +104,14 @@ CURL
   it "logs errors which occur during the request and re-raises them through" do
     logger = Logger.new(log = StringIO.new)
 
-    expect {
+    expect do
       connection(logger).get("/error")
-    }.to raise_error(TestError, "An error occurred during the request")
+    end.to raise_error(TestError, "An error occurred during the request")
 
     log.rewind
-    expect(log.read).to match(/\bERROR\b.+\bTestError - An error occurred during the request \(.+\)$/)
+    expect(log.read).to match(
+      /\bERROR\b.+\bTestError - An error occurred during the request \(.+\)$/
+    )
   end
 
   private

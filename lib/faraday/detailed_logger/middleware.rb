@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "faraday"
 require "faraday/detailed_logger/tagged_logging"
 
@@ -17,7 +19,6 @@ module Faraday
       attr_reader :logger
       attr_reader :tags
 
-
       # Internal: Used as the Middleware's logger in the case that an explicit
       # logger is not provided.
       #
@@ -27,7 +28,6 @@ module Faraday
         require "logger"
         ::Logger.new($stdout)
       end
-
 
       # Public: Initialize a new Logger middleware.
       #
@@ -58,7 +58,9 @@ module Faraday
         end
         super
       rescue
-        logger.error { "#{$!.class.name} - #{$!.message} (#{$!.backtrace.first})" }
+        logger.error do
+          "#{$!.class.name} - #{$!.message} (#{$!.backtrace.first})"
+        end
         raise
       end
 
