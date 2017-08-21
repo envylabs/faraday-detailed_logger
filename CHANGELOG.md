@@ -11,7 +11,7 @@
 
 * No significant changes.
 
-## [2.1.2][] / 2016-08-21
+## [2.1.2][] / 2017-08-21
 
 * Update the middleware to allow the `logger` and `tags` to be publicly
   accessible. This is not necessarily intended to be developer-used, but rather
