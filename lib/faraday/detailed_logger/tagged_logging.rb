@@ -48,12 +48,12 @@ module Faraday
 
         private
 
-        def tags_text
-          tags = current_tags
-          if tags.any?
-            tags.map { |tag| "[#{tag}] " }.join
+          def tags_text
+            tags = current_tags
+            if tags.any?
+              tags.map { |tag| "[#{tag}] " }.join
+            end
           end
-        end
       end
 
       def self.new(logger)

@@ -82,31 +82,29 @@ module Faraday
 
       private
 
-      def curl_request_output(env)
-        curl_output(env[:request_headers], env[:body]).inspect
-      end
-
-      def curl_response_output(env)
-        curl_output(env[:response_headers], env[:body]).inspect
-      end
-
-      def curl_output(headers, body)
-        string = headers.map { |k, v| "#{k}: #{v}" }.join("\n")
-        string + "\n\n#{body}"
-      end
-
-      def log_response_status(status, &block)
-        case status
-        when 200..399
-          logger.info(&block)
-        else
-          logger.warn(&block)
+        def curl_request_output(env)
+          curl_output(env[:request_headers], env[:body]).inspect
         end
-      end
+
+        def curl_response_output(env)
+          curl_output(env[:response_headers], env[:body]).inspect
+        end
+
+        def curl_output(headers, body)
+          string = headers.map { |k, v| "#{k}: #{v}" }.join("\n")
+          string + "\n\n#{body}"
+        end
+
+        def log_response_status(status, &block)
+          case status
+          when 200..399
+            logger.info(&block)
+          else
+            logger.warn(&block)
+          end
+        end
     end
   end
 end
 
-Faraday::Response.register_middleware({
-  detailed_logger: Faraday::DetailedLogger::Middleware
-})
+Faraday::Response.register_middleware(detailed_logger: Faraday::DetailedLogger::Middleware)

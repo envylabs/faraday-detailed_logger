@@ -43,15 +43,13 @@ RSpec.describe Faraday::DetailedLogger::Middleware do
 
     connection(logger).post("/nigirizushi", {
       "body" => "content"
-    }, {
-      user_agent: "Faraday::DetailedLogger"
-    })
+    },       user_agent: "Faraday::DetailedLogger")
     log.rewind
-    curl = <<~CURL.strip
-      User-Agent: Faraday::DetailedLogger
-      Content-Type: application/x-www-form-urlencoded
+    curl = <<-CURL.strip
+User-Agent: Faraday::DetailedLogger
+Content-Type: application/x-www-form-urlencoded
 
-      body=content
+body=content
 CURL
     expect(log.read).to match(/\bDEBUG\b.+#{Regexp.escape(curl.inspect)}/)
   end
@@ -59,7 +57,7 @@ CURL
   it "logs a 2XX response status code at an INFO level" do
     logger = Logger.new(log = StringIO.new)
 
-    connection(logger).get("/oaiso", { c: 200 })
+    connection(logger).get("/oaiso", c: 200)
     log.rewind
     expect(log.read).to match(/\bINFO\b.+\bHTTP 200\b/)
   end
@@ -67,7 +65,7 @@ CURL
   it "logs a 3XX response status code at an INFO level" do
     logger = Logger.new(log = StringIO.new)
 
-    connection(logger).get("/oaiso", { c: 301 })
+    connection(logger).get("/oaiso", c: 301)
     log.rewind
     expect(log.read).to match(/\bINFO\b.+\bHTTP 301\b/)
   end
@@ -75,7 +73,7 @@ CURL
   it "logs a 4XX response status code at a WARN level" do
     logger = Logger.new(log = StringIO.new)
 
-    connection(logger).get("/oaiso", { c: 401 })
+    connection(logger).get("/oaiso", c: 401)
     log.rewind
     expect(log.read).to match(/\bWARN\b.+\bHTTP 401\b/)
   end
@@ -83,7 +81,7 @@ CURL
   it "logs a 5XX response status code at an WARN level" do
     logger = Logger.new(log = StringIO.new)
 
-    connection(logger).get("/oaiso", { c: 500 })
+    connection(logger).get("/oaiso", c: 500)
     log.rewind
     expect(log.read).to match(/\bWARN\b.+\bHTTP 500\b/)
   end
@@ -93,10 +91,10 @@ CURL
 
     connection(logger).post("/nigirizushi")
     log.rewind
-    curl = <<~CURL.strip
-      Content-Type: application/json
+    curl = <<-CURL.strip
+Content-Type: application/json
 
-      {"id":"1"}
+{"id":"1"}
 CURL
     expect(log.read).to match(/\bDEBUG\b.+#{Regexp.escape(curl.inspect)}/)
   end
@@ -116,25 +114,25 @@ CURL
 
   private
 
-  def connection(logger = nil, *tags)
-    Faraday.new({ url: "http://sushi.com" }) do |builder|
-      builder.request(:url_encoded)
-      builder.response(:detailed_logger, logger, *tags)
-      builder.adapter(:test) do |stub|
-        stub.get("/temaki") do
-          [200, { "Content-Type" => "text/plain" }, "temaki"]
-        end
-        stub.post("/nigirizushi") do
-          [200, { "Content-Type" => "application/json" }, "{\"id\":\"1\"}"]
-        end
-        stub.get("/oaiso") do |env|
-          code = env.respond_to?(:params) ? env.params["c"] : env[:params]["c"]
-          [code.to_i, { "Content-Type" => "application/json" }, code]
-        end
-        stub.get("/error") do
-          raise TestError, "An error occurred during the request"
+    def connection(logger = nil, *tags)
+      Faraday.new(url: "http://sushi.com") do |builder|
+        builder.request(:url_encoded)
+        builder.response(:detailed_logger, logger, *tags)
+        builder.adapter(:test) do |stub|
+          stub.get("/temaki") do
+            [200, { "Content-Type" => "text/plain" }, "temaki"]
+          end
+          stub.post("/nigirizushi") do
+            [200, { "Content-Type" => "application/json" }, "{\"id\":\"1\"}"]
+          end
+          stub.get("/oaiso") do |env|
+            code = env.respond_to?(:params) ? env.params["c"] : env[:params]["c"]
+            [code.to_i, { "Content-Type" => "application/json" }, code]
+          end
+          stub.get("/error") do
+            raise TestError, "An error occurred during the request"
+          end
         end
       end
     end
-  end
 end

@@ -25,5 +25,5 @@ appraise "faraday-0.13" do
 end
 
 appraise "faraday-canary" do
-  gem "faraday", { git: "https://github.com/lostisland/faraday.git" }
+  gem "faraday", git: "https://github.com/lostisland/faraday.git"
 end
