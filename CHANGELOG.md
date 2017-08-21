@@ -9,7 +9,9 @@
 
 ## [HEAD][] / unreleased
 
-* No significant changes.
+* Update the middleware to allow the `logger` and `tags` to be publicly
+  accessible. This is not necessarily intended to be developer-used, but rather
+  fix warnings in older versions of Ruby.
 
 ## [2.1.1][] / 2016-01-07
 
