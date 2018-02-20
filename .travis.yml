@@ -1,5 +1,8 @@
 before_install: gem install bundler -v 1.16.1
-cache: bundler
+before_script:
+  - bundle exec license_finder licenses add bundler MIT
+cache:
+  bundler: true
 gemfile:
   - gemfiles/faraday_0.8.gemfile
   - gemfiles/faraday_0.9.gemfile
@@ -16,6 +19,9 @@ matrix:
   fast_finish: true
 notifications:
   email: false
+script:
+  - bundle exec license_finder --quiet
+  - bundle exec rake
 rvm:
   - 2.2.9
   - 2.3.6

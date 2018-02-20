@@ -159,4 +159,19 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/envyla
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+The gem is available as open source under the terms of the [MIT License][].
+
+### Dependency Licensing
+
+The dependencies and sub-dependencies of this gem are checked to be available
+for Private Use, Commercial Use, Modification, and Distribution:
+
+* [2-Clause BSD License][]
+* [Apache 2.0 License][]
+* [MIT License][]
+* [Ruby License][]
+
+[2-Clause BSD License]: https://opensource.org/licenses/BSD-2-Clause
+[Apache 2.0 License]: https://opensource.org/licenses/Apache-2.0
+[MIT License]: https://opensource.org/licenses/MIT
+[Ruby License]: https://en.wikipedia.org/wiki/Ruby_License

@@ -31,6 +31,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "appraisal", "~> 2.0"
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "coveralls"
+  spec.add_development_dependency "license_finder", "~> 5.0"
   spec.add_development_dependency "rake", "~> 12.0"
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "rubocop-rails", "~> 1.0"
