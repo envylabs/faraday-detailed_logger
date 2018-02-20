@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require "spec_helper"
-
 require "logger"
 require "stringio"
 
@@ -35,9 +33,11 @@ RSpec.describe Faraday::DetailedLogger::Middleware do
     end
 
     it "logs the requested body at a DEBUG level" do
-      connection(logger).post("/nigirizushi", {
-        "body" => "content"
-      },       user_agent: "Faraday::DetailedLogger")
+      connection(logger).post(
+        "/nigirizushi",
+        { "body" => "content" },
+        { user_agent: "Faraday::DetailedLogger" }
+      )
       log.rewind
       curl = <<-CURL.strip
 User-Agent: Faraday::DetailedLogger
