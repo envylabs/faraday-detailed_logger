@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "logger"
+require 'logger'
 
 module Faraday
   module DetailedLogger
@@ -48,12 +48,12 @@ module Faraday
 
         private
 
-          def tags_text
-            tags = current_tags
-            if tags.any?
-              tags.map { |tag| "[#{tag}] " }.join
-            end
+        def tags_text
+          tags = current_tags
+          if tags.any?
+            tags.map { |tag| "[#{tag}] " }.join
           end
+        end
       end
 
       def self.new(logger)

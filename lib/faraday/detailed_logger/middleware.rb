@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require "faraday"
-require "faraday/detailed_logger/tagged_logging"
+require 'faraday'
+require 'faraday/detailed_logger/tagged_logging'
 
 module Faraday
   module DetailedLogger
@@ -25,7 +25,7 @@ module Faraday
       # Returns a Logger instance.
       #
       def self.default_logger
-        require "logger"
+        require 'logger'
         ::Logger.new($stdout)
       end
 
@@ -82,27 +82,27 @@ module Faraday
 
       private
 
-        def curl_request_output(env)
-          curl_output(env[:request_headers], env[:body]).inspect
-        end
+      def curl_request_output(env)
+        curl_output(env[:request_headers], env[:body]).inspect
+      end
 
-        def curl_response_output(env)
-          curl_output(env[:response_headers], env[:body]).inspect
-        end
+      def curl_response_output(env)
+        curl_output(env[:response_headers], env[:body]).inspect
+      end
 
-        def curl_output(headers, body)
-          string = headers.map { |k, v| "#{k}: #{v}" }.join("\n")
-          string + "\n\n#{body}"
-        end
+      def curl_output(headers, body)
+        string = headers.map { |k, v| "#{k}: #{v}" }.join("\n")
+        string + "\n\n#{body}"
+      end
 
-        def log_response_status(status, &block)
-          case status
-          when 200..399
-            logger.info(&block)
-          else
-            logger.warn(&block)
-          end
+      def log_response_status(status, &block)
+        case status
+        when 200..399
+          logger.info(&block)
+        else
+          logger.warn(&block)
         end
+      end
     end
   end
 end

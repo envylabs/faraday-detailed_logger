@@ -1,3 +1,17 @@
 inherit_gem:
   rubocop-rails:
     - config/rails.yml
+
+Layout/IndentationConsistency:
+  Enabled: true
+  EnforcedStyle: normal
+
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: single_quotes
+
+AllCops:
+  Exclude:
+    - 'gemfiles/*.gemfile'
+  TargetRailsVersion: 5.2
+  TargetRubyVersion: 2.5
