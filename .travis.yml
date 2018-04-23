@@ -11,6 +11,7 @@ gemfile:
   - gemfiles/faraday_0.12.gemfile
   - gemfiles/faraday_0.13.gemfile
   - gemfiles/faraday_0.14.gemfile
+  - gemfiles/faraday_0.15.gemfile
   - gemfiles/faraday_canary.gemfile
 language: ruby
 matrix:
