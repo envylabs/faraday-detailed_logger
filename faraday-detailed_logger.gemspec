@@ -25,6 +25,10 @@ Gem::Specification.new do |spec|
   spec.bindir = 'exe'
   spec.executables = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
+  
+  spec.metadata['changelog_uri'] = 'https://github.com/envylabs/faraday-detailed_logger/blob/master/CHANGELOG.md'
+  spec.metadata['source_code_uri'] = 'https://github.com/envylabs/faraday-detailed_logger'
+  spec.metadata['bug_tracker_uri'] = 'https://github.com/envylabs/faraday-detailed_logger/issues'
 
   spec.add_runtime_dependency 'faraday', '~> 0.8'
 
