@@ -2,27 +2,60 @@
 before_install: gem install bundler -v 2.0.1
 before_script:
   - bundle exec license_finder licenses add bundler MIT
+branches:
+  only:
+    - master
+    - /^v\d+\.\d+\.\d+/
 cache:
   bundler: true
-gemfile:
-  - gemfiles/faraday_0.8.gemfile
-  - gemfiles/faraday_0.12.gemfile
-  - gemfiles/faraday_0.13.gemfile
-  - gemfiles/faraday_0.14.gemfile
-  - gemfiles/faraday_0.15.gemfile
-  - gemfiles/faraday_canary.gemfile
-language: ruby
-matrix:
+dist: xenial
+jobs:
   allow_failures:
-    - gemfile: gemfiles/faraday_canary.gemfile
-  fast_finish: true
+    - env: BUNDLE_GEMFILE=$PWD/gemfiles/faraday_canary.gemfile
+      rvm: 2.6.2
+
+  fail_fast: true
+
+  include:
+    - stage: Test
+      script: bundle exec rake
+      rvm: 2.6.2
+
+    - stage: Latest Faraday Release
+      env: BUNDLE_GEMFILE=$PWD/gemfiles/faraday_latest.gemfile
+      rvm: 2.6.2
+    - env: BUNDLE_GEMFILE=$PWD/gemfiles/faraday_latest.gemfile
+      rvm: 2.5.5
+    - env: BUNDLE_GEMFILE=$PWD/gemfiles/faraday_latest.gemfile
+      rvm: 2.4.5
+
+    - stage: Additional Faraday Tests
+      env: BUNDLE_GEMFILE=$PWD/gemfiles/faraday_0.15.gemfile
+      rvm: 2.6.2
+    - env: BUNDLE_GEMFILE=$PWD/gemfiles/faraday_0.15.gemfile
+      rvm: 2.4.5
+    - env: BUNDLE_GEMFILE=$PWD/gemfiles/faraday_0.14.gemfile
+      rvm: 2.6.2
+    - env: BUNDLE_GEMFILE=$PWD/gemfiles/faraday_0.14.gemfile
+      rvm: 2.4.5
+    - env: BUNDLE_GEMFILE=$PWD/gemfiles/faraday_0.13.gemfile
+      rvm: 2.6.2
+    - env: BUNDLE_GEMFILE=$PWD/gemfiles/faraday_0.13.gemfile
+      rvm: 2.4.5
+    - env: BUNDLE_GEMFILE=$PWD/gemfiles/faraday_0.12.gemfile
+      rvm: 2.6.2
+    - env: BUNDLE_GEMFILE=$PWD/gemfiles/faraday_0.12.gemfile
+      rvm: 2.4.5
+    - env: BUNDLE_GEMFILE=$PWD/gemfiles/faraday_0.8.gemfile
+      rvm: 2.6.2
+    - env: BUNDLE_GEMFILE=$PWD/gemfiles/faraday_0.8.gemfile
+      rvm: 2.4.5
+    - env: BUNDLE_GEMFILE=$PWD/gemfiles/faraday_canary.gemfile
+      rvm: 2.6.2
+language: ruby
 notifications:
   email: false
 script:
   - bundle exec license_finder --quiet
   - bundle exec rake
-rvm:
-  - 2.4.5
-  - 2.5.5
-  - 2.6.2
 sudo: false
