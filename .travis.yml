@@ -1,6 +1,8 @@
 ---
 before_install:
   - gem install bundler -v 2.0.1
+before_script:
+  - bundle exec license_finder licenses add bundler MIT
 branches:
   only:
     - master
