@@ -2,7 +2,7 @@
 
 [![Gem Version](https://img.shields.io/gem/v/faraday-detailed_logger.svg)](https://rubygems.org/gems/faraday-detailed_logger)
 [![Build Status](https://img.shields.io/travis/envylabs/faraday-detailed_logger/master.svg)](https://travis-ci.org/envylabs/faraday-detailed_logger)
-[![Code Climate](https://img.shields.io/codeclimate/github/envylabs/faraday-detailed_logger.svg)](https://codeclimate.com/github/envylabs/faraday-detailed_logger)
+[![Maintainability](https://api.codeclimate.com/v1/badges/4d352482c536f5cee0c8/maintainability)](https://codeclimate.com/github/envylabs/faraday-detailed_logger/maintainability)
 [![Coverage Status](https://img.shields.io/coveralls/envylabs/faraday-detailed_logger.svg)](https://coveralls.io/r/envylabs/faraday-detailed_logger)
 [![Inline docs](https://inch-ci.org/github/envylabs/faraday-detailed_logger.svg?branch=master)](https://inch-ci.org/github/envylabs/faraday-detailed_logger)
 
