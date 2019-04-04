@@ -10,6 +10,10 @@
 
 * No significant changes.
 
+## [2.1.3][] / 2019-04-04
+
+* Maintenance release, no functional changes.
+
 ## [2.1.2][] / 2017-08-21
 
 * Update the middleware to allow the `logger` and `tags` to be publicly
@@ -51,4 +55,5 @@
 [2.1.0]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.0.0...v2.1.0
 [2.1.1]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.1.0...v2.1.1
 [2.1.2]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.1.1...v2.1.2
-[HEAD]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.1.2...master
+[2.1.3]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.1.2...v2.1.3
+[HEAD]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.1.3...master
