@@ -57,4 +57,3 @@ notifications:
 script:
   - bundle exec license_finder --quiet
   - bundle exec rake
-sudo: false
