@@ -48,7 +48,7 @@ GEM
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.2)
     json (2.2.0)
-    license_finder (5.7.1)
+    license_finder (5.9.1)
       bundler
       rubyzip
       thor
@@ -110,7 +110,7 @@ GEM
       railties (>= 3.0)
       rubocop (~> 0.60)
     ruby-progressbar (1.10.0)
-    rubyzip (1.2.2)
+    rubyzip (1.2.3)
     simplecov (0.16.1)
       docile (~> 1.1)
       json (>= 1.8, < 3)
