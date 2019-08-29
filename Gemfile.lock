@@ -48,7 +48,7 @@ GEM
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.2)
     json (2.2.0)
-    license_finder (5.9.2)
+    license_finder (5.10.1)
       bundler
       rubyzip
       thor
