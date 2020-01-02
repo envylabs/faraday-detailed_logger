@@ -1,17 +1,29 @@
+---
+
 inherit_gem:
-  rubocop-rails:
-    - config/rails.yml
-
-Layout/IndentationConsistency:
-  Enabled: true
-  EnforcedStyle: normal
-
-Style/StringLiterals:
-  Enabled: true
-  EnforcedStyle: single_quotes
+  rubocop-rails_config:
+    - "config/rails.yml"
 
 AllCops:
   Exclude:
-    - 'gemfiles/*.gemfile'
-  TargetRailsVersion: 5.2
+    - 'gemfiles/*'
+    - 'vendor/**/*'
   TargetRubyVersion: 2.5
+
+Layout/CaseIndentation:
+  EnforcedStyle: "end"
+
+Layout/EmptyLinesAroundAccessModifier:
+  EnforcedStyle: "around"
+
+Layout/EndOfLine:
+  EnforcedStyle: "lf"
+
+Layout/HeredocIndentation:
+  EnforcedStyle: "squiggly"
+
+Layout/IndentationConsistency:
+  EnforcedStyle: "normal"
+
+Style/StringLiterals:
+  EnforcedStyle: "single_quotes"

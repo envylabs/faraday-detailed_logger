@@ -39,12 +39,12 @@ RSpec.describe Faraday::DetailedLogger::Middleware do
         { user_agent: 'Faraday::DetailedLogger' }
       )
       log.rewind
-      curl = <<-CURL.strip
-User-Agent: Faraday::DetailedLogger
-Content-Type: application/x-www-form-urlencoded
+      curl = <<~CURL.strip
+        User-Agent: Faraday::DetailedLogger
+        Content-Type: application/x-www-form-urlencoded
 
-body=content
-CURL
+        body=content
+      CURL
       expect(log.read).to match(/\bDEBUG\b.+#{Regexp.escape(curl.inspect)}/)
     end
   end
@@ -77,11 +77,11 @@ CURL
     it 'logs the response headers and body at a DEBUG level' do
       connection(logger).post('/nigirizushi')
       log.rewind
-      curl = <<-CURL.strip
-Content-Type: application/json
+      curl = <<~CURL.strip
+        Content-Type: application/json
 
-{"id":"1"}
-CURL
+        {"id":"1"}
+      CURL
       expect(log.read).to match(/\bDEBUG\b.+#{Regexp.escape(curl.inspect)}/)
     end
 

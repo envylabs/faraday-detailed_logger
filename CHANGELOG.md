@@ -8,7 +8,7 @@
 
 ## [HEAD][] / unreleased
 
-* No significant changes.
+* Add support for faraday 1.0.
 
 ## [2.1.3][] / 2019-04-04
 

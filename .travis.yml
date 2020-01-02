@@ -1,61 +1,38 @@
 ---
+
 before_install:
-  - gem install bundler -v 2.0.1
+  - "gem install bundler -v 2.1.3"
 before_script:
-  - bundle exec license_finder licenses add bundler MIT
+  - "bundle exec license_finder licenses add bundler MIT"
 branches:
   only:
-    - master
-    - /^v\d+\.\d+\.\d+/
+    - "master"
+    - '/^v\d+\.\d+\.\d+/'
 cache:
   bundler: true
-dist: xenial
+dist: "bionic"
 jobs:
   allow_failures:
-    - env: BUNDLE_GEMFILE=$PWD/gemfiles/faraday_canary.gemfile
-      rvm: 2.6.2
+    - gemfile: "gemfiles/faraday_canary.gemfile"
 
   fail_fast: true
 
   include:
-    - stage: Test
-      script: bundle exec rake
-      rvm: 2.6.2
+    - stage: "Test"
 
-    - stage: Latest Faraday Release
-      env: BUNDLE_GEMFILE=$PWD/gemfiles/faraday_latest.gemfile
-      rvm: 2.6.2
-    - env: BUNDLE_GEMFILE=$PWD/gemfiles/faraday_latest.gemfile
-      rvm: 2.5.5
-    - env: BUNDLE_GEMFILE=$PWD/gemfiles/faraday_latest.gemfile
-      rvm: 2.4.5
+    - stage: "Latest Faraday Release"
+      gemfile: "gemfiles/faraday_latest.gemfile"
 
-    - stage: Additional Faraday Tests
-      env: BUNDLE_GEMFILE=$PWD/gemfiles/faraday_0.15.gemfile
-      rvm: 2.6.2
-    - env: BUNDLE_GEMFILE=$PWD/gemfiles/faraday_0.15.gemfile
-      rvm: 2.4.5
-    - env: BUNDLE_GEMFILE=$PWD/gemfiles/faraday_0.14.gemfile
-      rvm: 2.6.2
-    - env: BUNDLE_GEMFILE=$PWD/gemfiles/faraday_0.14.gemfile
-      rvm: 2.4.5
-    - env: BUNDLE_GEMFILE=$PWD/gemfiles/faraday_0.13.gemfile
-      rvm: 2.6.2
-    - env: BUNDLE_GEMFILE=$PWD/gemfiles/faraday_0.13.gemfile
-      rvm: 2.4.5
-    - env: BUNDLE_GEMFILE=$PWD/gemfiles/faraday_0.12.gemfile
-      rvm: 2.6.2
-    - env: BUNDLE_GEMFILE=$PWD/gemfiles/faraday_0.12.gemfile
-      rvm: 2.4.5
-    - env: BUNDLE_GEMFILE=$PWD/gemfiles/faraday_0.8.gemfile
-      rvm: 2.6.2
-    - env: BUNDLE_GEMFILE=$PWD/gemfiles/faraday_0.8.gemfile
-      rvm: 2.4.5
-    - env: BUNDLE_GEMFILE=$PWD/gemfiles/faraday_canary.gemfile
-      rvm: 2.6.2
-language: ruby
+    - gemfile: "gemfiles/faraday_0.8.gemfile"
+      stage: "Additional Faraday Tests"
+    - gemfile: "gemfiles/faraday_0.x.gemfile"
+    - gemfile: "gemfiles/faraday_1.x.gemfile"
+    - gemfile: "gemfiles/faraday_canary.gemfile"
+language: "ruby"
 notifications:
   email: false
+rvm:
+  - "2.7.0"
 script:
-  - bundle exec license_finder --quiet
-  - bundle exec rake
+  - "bundle exec license_finder --quiet"
+  - "bundle exec rake"
