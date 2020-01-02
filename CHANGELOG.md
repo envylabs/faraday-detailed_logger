@@ -8,6 +8,10 @@
 
 ## [HEAD][] / unreleased
 
+* No significant changes.
+
+## [2.2.0][] / 2020-01-02
+
 * Add support for faraday 1.0.
 
 ## [2.1.3][] / 2019-04-04
@@ -56,4 +60,5 @@
 [2.1.1]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.1.0...v2.1.1
 [2.1.2]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.1.1...v2.1.2
 [2.1.3]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.1.2...v2.1.3
-[HEAD]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.1.3...master
+[2.2.0]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.1.3...v2.2.0
+[HEAD]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.2.0...master
