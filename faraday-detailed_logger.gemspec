@@ -38,5 +38,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'license_finder', '~> 5.0'
   spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
-  spec.add_development_dependency 'rubocop-rails_config', '~> 0.5.0'
+  spec.add_development_dependency 'rubocop-rails_config', '~> 0.9.0'
 end
