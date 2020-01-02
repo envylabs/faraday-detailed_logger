@@ -34,5 +34,6 @@ notifications:
 rvm:
   - "2.7.0"
 script:
+  - "bundle exec rubocop -fq"
   - "bundle exec license_finder --quiet"
   - "bundle exec rake"

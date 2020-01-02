@@ -7,8 +7,9 @@ inherit_gem:
 AllCops:
   Exclude:
     - 'gemfiles/*'
+    - 'gemfiles/**/*'
     - 'vendor/**/*'
-  TargetRubyVersion: 2.5
+  TargetRubyVersion: "2.5"
 
 Layout/CaseIndentation:
   EnforcedStyle: "end"
