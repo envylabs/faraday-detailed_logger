@@ -30,7 +30,7 @@ Gem::Specification.new do |spec|
   spec.metadata['source_code_uri'] = 'https://github.com/envylabs/faraday-detailed_logger'
   spec.metadata['bug_tracker_uri'] = 'https://github.com/envylabs/faraday-detailed_logger/issues'
 
-  spec.add_runtime_dependency 'faraday', '~> 0.8'
+  spec.add_runtime_dependency 'faraday', '>= 0.8', '< 2.0'
 
   spec.add_development_dependency 'appraisal', '~> 2.0'
   spec.add_development_dependency 'bundler', '~> 2.0'
