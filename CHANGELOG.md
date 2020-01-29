@@ -8,7 +8,7 @@
 
 ## [HEAD][] / unreleased
 
-* No significant changes.
+* Sort the request and response headers when logging.
 
 ## [2.2.0][] / 2020-01-02
 

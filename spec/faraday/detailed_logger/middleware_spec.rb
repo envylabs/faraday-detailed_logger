@@ -40,8 +40,8 @@ RSpec.describe Faraday::DetailedLogger::Middleware do
       )
       log.rewind
       curl = <<~CURL.strip
-        User-Agent: Faraday::DetailedLogger
         Content-Type: application/x-www-form-urlencoded
+        User-Agent: Faraday::DetailedLogger
 
         body=content
       CURL

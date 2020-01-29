@@ -91,7 +91,7 @@ module Faraday
       end
 
       def curl_output(headers, body)
-        string = headers.map { |k, v| "#{k}: #{v}" }.join("\n")
+        string = headers.to_a.sort_by(&:first).map { |k, v| "#{k}: #{v}" }.join("\n")
         string + "\n\n#{body}"
       end
 
