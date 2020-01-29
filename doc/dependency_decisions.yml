@@ -1,23 +1,23 @@
 ---
-- - :whitelist
+- - :permit
   - MIT
   - :who: Nathaniel Bibler
     :why:  This license is FSF and OSI approved.
     :versions: []
     :when: 2018-02-20 17:46:01.372600000 Z
-- - :whitelist
+- - :permit
   - Simplified BSD
   - :who: Nathaniel Bibler
     :why:  This license is FSF and OSI approved.
     :versions: []
     :when: 2018-02-20 17:46:13.990005000 Z
-- - :whitelist
+- - :permit
   - Ruby
   - :who: Nathaniel Bibler
     :why:  This license is FSF approved.
     :versions: []
     :when: 2018-02-20 17:46:30.088049000 Z
-- - :whitelist
+- - :permit
   - Apache-2.0
   - :who: Nathaniel Bibler
     :why: This license is FSF and OSI approved.
