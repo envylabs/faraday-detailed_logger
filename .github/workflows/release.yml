@@ -1,0 +1,36 @@
+---
+
+name: "Release"
+
+"on":
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  github_packages:
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - uses: "actions/checkout@v1"
+      - uses: "actions/setup-ruby@v1"
+        with:
+          ruby-version: "2.7"
+      - name: "Publish to GitHub"
+        uses: "jstastny/publish-gem-to-github@v1.1"
+        with:
+          token: "${{ secrets.GITHUB_TOKEN }}"
+          owner: "envylabs"
+
+  rubygems:
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - uses: "actions/checkout@v1"
+      - uses: "actions/setup-ruby@v1"
+        with:
+          ruby-version: "2.7"
+      - name: "Publish to Rubygems"
+        uses: "dawidd6/action-publish-gem@v1.0.0"
+        with:
+          api_key: "${{secrets.RUBYGEMS_API_KEY}}"
