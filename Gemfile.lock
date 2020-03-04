@@ -138,7 +138,7 @@ GEM
     unicode-display_width (1.6.1)
     with_env (1.1.0)
     xml-simple (1.1.5)
-    zeitwerk (2.2.2)
+    zeitwerk (2.3.0)
 
 PLATFORMS
   ruby
