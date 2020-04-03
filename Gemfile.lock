@@ -134,7 +134,7 @@ GEM
       sync
     toml (0.2.0)
       parslet (~> 1.8.0)
-    tzinfo (1.2.6)
+    tzinfo (1.2.7)
       thread_safe (~> 0.1)
     unicode-display_width (1.7.0)
     with_env (1.1.0)
