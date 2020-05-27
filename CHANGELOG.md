@@ -1,9 +1,10 @@
 # Faraday::DetailedLogger changelog
 
-[![Gem Version](https://img.shields.io/gem/v/faraday-detailed_logger.svg)](https://rubygems.org/gems/faraday-detailed_logger)
-[![Build Status](https://img.shields.io/travis/envylabs/faraday-detailed_logger/master.svg)](https://travis-ci.org/envylabs/faraday-detailed_logger)
+[![Gem Version](https://badge.fury.io/rb/faraday-detailed_logger.svg)](https://badge.fury.io/rb/faraday-detailed_logger)
+[![Tests](https://github.com/envylabs/faraday-detailed_logger/workflows/Tests/badge.svg)](https://github.com/envylabs/faraday-detailed_logger/actions?query=workflow%3ATests)
+[![Build Status](https://travis-ci.org/envylabs/faraday-detailed_logger.svg?branch=master)](https://travis-ci.org/envylabs/faraday-detailed_logger)
 [![Maintainability](https://api.codeclimate.com/v1/badges/4d352482c536f5cee0c8/maintainability)](https://codeclimate.com/github/envylabs/faraday-detailed_logger/maintainability)
-[![Coverage Status](https://img.shields.io/coveralls/envylabs/faraday-detailed_logger.svg)](https://coveralls.io/r/envylabs/faraday-detailed_logger)
+[![Coverage Status](https://coveralls.io/repos/github/envylabs/faraday-detailed_logger/badge.svg?branch=master)](https://coveralls.io/github/envylabs/faraday-detailed_logger?branch=master)
 [![Inline docs](https://inch-ci.org/github/envylabs/faraday-detailed_logger.svg?branch=master)](https://inch-ci.org/github/envylabs/faraday-detailed_logger)
 
 ## [HEAD][] / unreleased
