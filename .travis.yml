@@ -15,7 +15,7 @@ jobs:
   allow_failures:
     - gemfile: "gemfiles/faraday_canary.gemfile"
 
-  fail_fast: true
+  fast_finish: true
 
   include:
     - stage: "Test"
@@ -31,6 +31,7 @@ jobs:
 language: "ruby"
 notifications:
   email: false
+os: "linux"
 script:
   - "bundle exec rake"
   - "bundle exec rubocop -fq"
