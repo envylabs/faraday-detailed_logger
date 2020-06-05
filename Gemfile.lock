@@ -45,7 +45,7 @@ GEM
     erubi (1.9.0)
     faraday (1.0.1)
       multipart-post (>= 1.2, < 3)
-    i18n (1.8.2)
+    i18n (1.8.3)
       concurrent-ruby (~> 1.0)
     json (2.3.0)
     license_finder (6.5.0)
