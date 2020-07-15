@@ -140,7 +140,7 @@ GEM
     unicode-display_width (1.7.0)
     with_env (1.1.0)
     xml-simple (1.1.5)
-    zeitwerk (2.3.1)
+    zeitwerk (2.4.0)
 
 PLATFORMS
   ruby
