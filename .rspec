@@ -1,3 +1,4 @@
 --color
---warnings
+--no-profile
 --require spec_helper
+--warnings
