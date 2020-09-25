@@ -20,9 +20,6 @@ Layout/EmptyLinesAroundAccessModifier:
 Layout/EndOfLine:
   EnforcedStyle: "lf"
 
-Layout/HeredocIndentation:
-  EnforcedStyle: "squiggly"
-
 Layout/IndentationConsistency:
   EnforcedStyle: "normal"
 
