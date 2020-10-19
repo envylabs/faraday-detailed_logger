@@ -43,8 +43,9 @@ GEM
     diff-lcs (1.4.4)
     docile (1.3.2)
     erubi (1.9.0)
-    faraday (1.0.1)
+    faraday (1.1.0)
       multipart-post (>= 1.2, < 3)
+      ruby2_keywords
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     json (2.3.1)
@@ -122,6 +123,7 @@ GEM
       rubocop-performance (~> 1.3)
       rubocop-rails (~> 2.0)
     ruby-progressbar (1.10.1)
+    ruby2_keywords (0.0.2)
     rubyzip (2.3.0)
     simplecov (0.16.1)
       docile (~> 1.1)
