@@ -137,7 +137,7 @@ GEM
     tins (1.26.0)
       sync
     tomlrb (2.0.0)
-    tzinfo (2.0.3)
+    tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (1.7.0)
     with_env (1.1.0)
