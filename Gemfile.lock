@@ -136,7 +136,7 @@ GEM
     thor (1.0.1)
     tins (1.26.0)
       sync
-    tomlrb (2.0.0)
+    tomlrb (2.0.1)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (1.7.0)
