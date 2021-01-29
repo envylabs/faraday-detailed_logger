@@ -100,7 +100,7 @@ GEM
     rspec-mocks (3.10.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.10.0)
-    rspec-support (3.10.1)
+    rspec-support (3.10.2)
     rubocop (0.93.1)
       parallel (~> 1.10)
       parser (>= 2.7.1.5)
