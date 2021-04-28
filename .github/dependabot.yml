@@ -1,0 +1,58 @@
+version: 2
+updates:
+- package-ecosystem: bundler
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "10:00"
+  open-pull-requests-limit: 10
+  allow:
+  - dependency-type: direct
+  - dependency-type: indirect
+  ignore:
+  - dependency-name: rubocop-performance
+    versions:
+    - 1.10.1
+    - 1.11.0
+  - dependency-name: rubocop
+    versions:
+    - 1.12.0
+    - 1.13.0
+  - dependency-name: railties
+    versions:
+    - 6.1.1
+    - 6.1.2
+    - 6.1.2.1
+    - 6.1.3
+    - 6.1.3.1
+  - dependency-name: actionview
+    versions:
+    - 6.1.1
+    - 6.1.2
+    - 6.1.2.1
+    - 6.1.3.1
+  - dependency-name: activesupport
+    versions:
+    - 6.1.1
+    - 6.1.2
+    - 6.1.2.1
+    - 6.1.3
+    - 6.1.3.1
+  - dependency-name: actionpack
+    versions:
+    - 6.1.1
+    - 6.1.2
+    - 6.1.2.1
+  - dependency-name: rubocop-rails_config
+    versions:
+    - 1.2.1
+    - 1.2.2
+  - dependency-name: rspec-support
+    versions:
+    - 3.10.2
+  - dependency-name: loofah
+    versions:
+    - 2.9.0
+  - dependency-name: mini_portile2
+    versions:
+    - 2.5.0
