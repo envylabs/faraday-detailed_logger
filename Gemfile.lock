@@ -146,7 +146,7 @@ GEM
     term-ansicolor (1.7.1)
       tins (~> 1.0)
     thor (1.0.1)
-    tins (1.28.0)
+    tins (1.29.0)
       sync
     tomlrb (2.0.1)
     tzinfo (2.0.4)
