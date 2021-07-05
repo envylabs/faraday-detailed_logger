@@ -144,7 +144,7 @@ GEM
       rubocop-rails (~> 2.0)
     ruby-progressbar (1.11.0)
     ruby2_keywords (0.0.4)
-    rubyzip (2.3.0)
+    rubyzip (2.3.1)
     simplecov (0.16.1)
       docile (~> 1.1)
       json (>= 1.8, < 3)
