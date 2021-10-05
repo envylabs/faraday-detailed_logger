@@ -4,7 +4,6 @@
 [![Tests](https://github.com/envylabs/faraday-detailed_logger/workflows/Tests/badge.svg)](https://github.com/envylabs/faraday-detailed_logger/actions?query=workflow%3ATests)
 [![Maintainability](https://api.codeclimate.com/v1/badges/4d352482c536f5cee0c8/maintainability)](https://codeclimate.com/github/envylabs/faraday-detailed_logger/maintainability)
 [![Coverage Status](https://coveralls.io/repos/github/envylabs/faraday-detailed_logger/badge.svg?branch=master)](https://coveralls.io/github/envylabs/faraday-detailed_logger?branch=master)
-[![Inline docs](https://inch-ci.org/github/envylabs/faraday-detailed_logger.svg?branch=master)](https://inch-ci.org/github/envylabs/faraday-detailed_logger)
 
 A Faraday middleware used for providing debug- and info-level logging
 information. The request and response logs follow very closely with cURL output
