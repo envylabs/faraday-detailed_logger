@@ -64,7 +64,7 @@ GEM
     faraday-rack (1.0.0)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
-    json (2.5.1)
+    json (2.6.0)
     license_finder (6.14.1)
       bundler
       rubyzip (>= 1, < 3)
