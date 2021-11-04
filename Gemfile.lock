@@ -163,7 +163,8 @@ GEM
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.1.0)
     with_env (1.1.0)
-    xml-simple (1.1.8)
+    xml-simple (1.1.9)
+      rexml
     zeitwerk (2.5.1)
 
 PLATFORMS
