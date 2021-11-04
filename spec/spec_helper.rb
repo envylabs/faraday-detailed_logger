@@ -4,10 +4,6 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
-if ENV['CI']
-  require 'coveralls'
-  Coveralls.wear!
-end
 require 'faraday/detailed_logger'
 
 RSpec.configure do |config|
