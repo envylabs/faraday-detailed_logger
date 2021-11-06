@@ -8,17 +8,18 @@ jobs:
         with:
           bundler-cache: "true"
           ruby-version: "2.7"
-      - name: "Forcibly set Bundler platform to patch for https://github.com/pivotal/LicenseFinder/issues/828"
+      - name: "Run Tests"
+        run: "bundle exec rake spec"
+      - name: "Check Ruby Style"
+        run: "bundle exec rubocop -c ./.rubocop.yml -fq"
+      - name: "Check Licenses"
         run: |
+          # Forcibly set Bundler platform to patch for https://github.com/pivotal/LicenseFinder/issues/828
           bundle config --local deployment false
           bundle lock --add-platform x86_64-linux
           bundle config --local deployment true
-      - name: "Run Tests"
-        run: "bundle exec rake spec"
-      - name: "Check Licenses"
-        run: "bundle exec license_finder --quiet"
-      - name: "Check Ruby Style"
-        run: "bundle exec rubocop -c ./.rubocop.yml -fq"
+
+          bundle exec license_finder --quiet
     strategy:
       matrix:
         gemfile:
