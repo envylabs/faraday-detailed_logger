@@ -8,13 +8,13 @@ jobs:
         with:
           bundler-cache: "true"
           ruby-version: "2.7"
+      # See https://github.com/pivotal/LicenseFinder/issues/828#issuecomment-953359134
+      - name: "Display Bundler platform"
+        run: "bundle platform"
       - name: "Run Tests"
         run: "bundle exec rake spec"
       - name: "Check Licenses"
-        # See https://github.com/pivotal/LicenseFinder/issues/828#issuecomment-953359134
-        run: |
-          bundle lock --add-platform `bundle platform`
-          bundle exec license_finder --quiet
+        run: "bundle exec license_finder --quiet"
       - name: "Check Ruby Style"
         run: "bundle exec rubocop -c ./.rubocop.yml -fq"
     strategy:
