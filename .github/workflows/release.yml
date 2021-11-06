@@ -3,9 +3,10 @@ jobs:
   github_packages:
     runs-on: "ubuntu-latest"
     steps:
-      - uses: "actions/checkout@v1"
-      - uses: "actions/setup-ruby@v1"
+      - uses: "actions/checkout@v2"
+      - uses: "ruby/setup-ruby@v1"
         with:
+          bundler-cache: "true"
           ruby-version: "2.7"
       - name: "Publish to GitHub"
         uses: "jstastny/publish-gem-to-github@v1.1"
