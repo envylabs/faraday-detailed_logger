@@ -8,9 +8,11 @@ jobs:
         with:
           bundler-cache: "true"
           ruby-version: "2.7"
-      # See https://github.com/pivotal/LicenseFinder/issues/828#issuecomment-953359134
-      - name: "Display Bundler platform"
-        run: "bundle platform"
+      - name: "Forcibly set Bundler platform to patch for https://github.com/pivotal/LicenseFinder/issues/828"
+        run: |
+          bundle config --local deployment false
+          bundle lock --add-platform x86_64-linux
+          bundle config --local deployment true
       - name: "Run Tests"
         run: "bundle exec rake spec"
       - name: "Check Licenses"
