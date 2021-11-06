@@ -10,6 +10,5 @@
 # rspec failure tracking
 .rspec_status
 
-/.ruby-version
 /gemfiles/.bundle/
 /gemfiles/*.gemfile.lock
