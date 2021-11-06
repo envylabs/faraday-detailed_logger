@@ -11,7 +11,10 @@ jobs:
       - name: "Run Tests"
         run: "bundle exec rake spec"
       - name: "Check Licenses"
-        run: "bundle exec license_finder --quiet"
+        # See https://github.com/pivotal/LicenseFinder/issues/828#issuecomment-953359134
+        run: |
+          bundle lock --add-platform `bundle platform`
+          bundle exec license_finder --quiet
       - name: "Check Ruby Style"
         run: "bundle exec rubocop -c ./.rubocop.yml -fq"
     strategy:
