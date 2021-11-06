@@ -5,6 +5,10 @@
 
 ## [HEAD][] / unreleased
 
+* No significant changes.
+
+## [2.4.0][] / 2021-11-06
+
 * Use [zeitwerk](https://rubygems.org/gems/zeitwerk) autoloading.
 
 ## [2.3.0][] / 2020-02-11
@@ -63,4 +67,5 @@
 [2.1.3]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.1.2...v2.1.3
 [2.2.0]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.1.3...v2.2.0
 [2.3.0]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.2.0...v2.3.0
-[HEAD]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.3.0...main
+[2.4.0]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.3.0...v2.4.0
+[HEAD]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.4.0...main
