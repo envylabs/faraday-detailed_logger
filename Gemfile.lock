@@ -3,6 +3,7 @@ PATH
   specs:
     faraday-detailed_logger (2.3.0)
       faraday (>= 0.8, < 2)
+      zeitwerk (~> 2.0)
 
 GEM
   remote: https://rubygems.org/

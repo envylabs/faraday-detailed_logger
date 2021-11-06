@@ -5,7 +5,7 @@
 
 ## [HEAD][] / unreleased
 
-* No significant changes.
+* Use [zeitwerk](https://rubygems.org/gems/zeitwerk) autoloading.
 
 ## [2.3.0][] / 2020-02-11
 
