@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-appraise 'faraday-0.8' do
-  gem 'faraday', '~> 0.8.0'
+appraise 'faraday-0.16.x' do
+  gem 'faraday', '~> 0.16.0'
 end
 
 appraise 'faraday-0.x' do
-  gem 'faraday', '~> 0.15'
+  gem 'faraday', '~> 0.16'
 end
 
 appraise 'faraday-1.x' do

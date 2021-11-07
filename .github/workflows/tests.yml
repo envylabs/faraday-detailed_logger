@@ -7,7 +7,7 @@ jobs:
       - uses: "ruby/setup-ruby@v1"
         with:
           bundler-cache: "true"
-          ruby-version: "2.7"
+          ruby-version: "${{ matrix.ruby }}"
       - name: "Run Tests"
         run: "bundle exec rake spec"
       - name: "Check Ruby Style"
@@ -23,11 +23,13 @@ jobs:
     strategy:
       matrix:
         gemfile:
-          - "Gemfile"
           - "gemfiles/faraday_latest.gemfile"
-          - "gemfiles/faraday_0.8.gemfile"
+          - "gemfiles/faraday_0.16.x.gemfile"
           - "gemfiles/faraday_0.x.gemfile"
           - "gemfiles/faraday_1.x.gemfile"
+        ruby:
+          - "2.7"
+          - "3.0"
 name: "Tests"
 "on":
   - "push"

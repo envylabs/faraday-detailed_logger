@@ -7,7 +7,7 @@ jobs:
       - uses: "ruby/setup-ruby@v1"
         with:
           bundler-cache: "true"
-          ruby-version: "2.7"
+          ruby-version: "3.0"
       - name: "Publish to GitHub"
         uses: "jstastny/publish-gem-to-github@v1.1"
         with:
