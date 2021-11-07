@@ -5,7 +5,7 @@
 
 ## [HEAD][] / unreleased
 
-* No significant changes.
+* Add faraday 2 support.
 
 ## [2.4.2][] / 2021-11-09
 
