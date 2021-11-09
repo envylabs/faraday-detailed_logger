@@ -5,7 +5,10 @@
 
 ## [HEAD][] / unreleased
 
-* No significant changes.
+* Revert zeitwerk autoloading changes.
+
+  The existing implementation caused application errors citing a `uninitialized
+  constant Faraday::DetailedLogger::Middleware`.
 
 ## [2.4.1][] / 2021-11-09
 
