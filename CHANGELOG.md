@@ -5,6 +5,10 @@
 
 ## [HEAD][] / unreleased
 
+* No significant changes.
+
+## [2.4.1][] / 2021-11-09
+
 * Fix `Faraday::Error: :detailed_logger is not registered on Faraday::Response`
   by relocating middleware registration.
 * Increase the low-end of the faraday dependency to `~> 0.16` for Ruby 3
@@ -72,4 +76,5 @@
 [2.2.0]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.1.3...v2.2.0
 [2.3.0]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.2.0...v2.3.0
 [2.4.0]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.3.0...v2.4.0
-[HEAD]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.4.0...main
+[2.4.1]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.4.0...v2.4.1
+[HEAD]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.4.1...main
