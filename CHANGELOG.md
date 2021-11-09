@@ -5,6 +5,8 @@
 
 ## [HEAD][] / unreleased
 
+* Fix `Faraday::Error: :detailed_logger is not registered on Faraday::Response`
+  by relocating middleware registration.
 * Increase the low-end of the faraday dependency to `~> 0.16` for Ruby 3
   compatibility. Versions of faraday earlier than 0.16 are incompatible with
   Ruby 3's Proc interface.
