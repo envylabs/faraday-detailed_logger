@@ -5,6 +5,10 @@
 
 ## [HEAD][] / unreleased
 
+* No significant changes.
+
+## [2.4.2][] / 2021-11-09
+
 * Revert zeitwerk autoloading changes.
 
   The existing implementation caused application errors citing a `uninitialized
@@ -80,4 +84,5 @@
 [2.3.0]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.2.0...v2.3.0
 [2.4.0]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.3.0...v2.4.0
 [2.4.1]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.4.0...v2.4.1
-[HEAD]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.4.1...main
+[2.4.2]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.4.1...v2.4.2
+[HEAD]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.4.2...main

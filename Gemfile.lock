@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    faraday-detailed_logger (2.4.1)
+    faraday-detailed_logger (2.4.2)
       faraday (>= 0.16, < 2)
 
 GEM
