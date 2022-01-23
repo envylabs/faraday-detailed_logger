@@ -5,6 +5,10 @@
 
 ## [HEAD][] / unreleased
 
+* No significant changes.
+
+## [2.5.0][] / 2022-01-23
+
 * Add faraday 2 support.
 * Extract an initial internal cURL formatter
 
@@ -86,4 +90,5 @@
 [2.4.0]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.3.0...v2.4.0
 [2.4.1]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.4.0...v2.4.1
 [2.4.2]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.4.1...v2.4.2
-[HEAD]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.4.2...main
+[2.5.0]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.4.2...v2.5.0
+[HEAD]: https://github.com/envylabs/faraday-detailed_logger/compare/v2.5.0...main

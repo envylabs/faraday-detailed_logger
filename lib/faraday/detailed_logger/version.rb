@@ -2,6 +2,6 @@
 
 module Faraday
   module DetailedLogger
-    VERSION = '2.4.2'
+    VERSION = '2.5.0'
   end
 end
