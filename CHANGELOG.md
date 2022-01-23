@@ -6,6 +6,7 @@
 ## [HEAD][] / unreleased
 
 * Add faraday 2 support.
+* Extract an initial internal cURL formatter
 
 ## [2.4.2][] / 2021-11-09
 

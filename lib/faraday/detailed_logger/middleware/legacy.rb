@@ -39,6 +39,7 @@ module Faraday
       #
       def initialize(app, logger = nil, *tags)
         super(app)
+        @formatter = CurlFormatter
         @logger = TaggedLogging.new(logger || self.class.default_logger)
         @tags = tags
       end
@@ -52,8 +53,8 @@ module Faraday
       #
       def call(env)
         logger.tagged(*tags) do
-          logger.info { "#{env[:method].upcase} #{env[:url]}" }
-          logger.debug { curl_request_output(env) }
+          logger.info { formatter.request(env) }
+          logger.debug { formatter.request_body(env) }
         end
         super
       rescue
@@ -74,25 +75,14 @@ module Faraday
         status = env[:status]
 
         logger.tagged(*tags) do
-          log_response_status(status) { "HTTP #{status}" }
-          logger.debug { curl_response_output(env) }
+          log_response_status(status) { formatter.response(env) }
+          logger.debug { formatter.response_body(env) }
         end
       end
 
       private
 
-      def curl_request_output(env)
-        curl_output(env[:request_headers], env[:body]).inspect
-      end
-
-      def curl_response_output(env)
-        curl_output(env[:response_headers], env[:body]).inspect
-      end
-
-      def curl_output(headers, body)
-        string = headers.to_a.sort_by(&:first).map { |k, v| "#{k}: #{v}" }.join("\n")
-        string + "\n\n#{body}"
-      end
+      attr_reader :formatter
 
       def log_response_status(status, &block)
         case status

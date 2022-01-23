@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'faraday'
+require 'faraday/detailed_logger/curl_formatter'
 require 'faraday/detailed_logger/tagged_logging'
 
 case
