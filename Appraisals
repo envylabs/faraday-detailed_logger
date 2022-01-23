@@ -12,6 +12,10 @@ appraise 'faraday-1.x' do
   gem 'faraday', '~> 1.0'
 end
 
+appraise 'faraday-2.x' do
+  gem 'faraday', '~> 2.0'
+end
+
 appraise 'faraday-latest' do
   gem 'faraday'
 end

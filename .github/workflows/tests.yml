@@ -27,6 +27,7 @@ jobs:
           - "gemfiles/faraday_0.16.x.gemfile"
           - "gemfiles/faraday_0.x.gemfile"
           - "gemfiles/faraday_1.x.gemfile"
+          - "gemfiles/faraday_2.x.gemfile"
         ruby:
           - "2.7"
           - "3.0"
