@@ -12,3 +12,4 @@
 
 /gemfiles/.bundle/
 /gemfiles/*.gemfile.lock
+/Gemfile.lock
