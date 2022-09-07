@@ -9,7 +9,7 @@ jobs:
           bundler-cache: "true"
           ruby-version: "3.1"
       - name: "Publish to GitHub"
-        uses: "jstastny/publish-gem-to-github@v2.1"
+        uses: "jstastny/publish-gem-to-github@v2.3"
         with:
           owner: "envylabs"
           token: "${{ secrets.GITHUB_TOKEN }}"
