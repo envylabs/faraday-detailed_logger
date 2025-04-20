@@ -3,6 +3,13 @@
 [![Gem Version](https://badge.fury.io/rb/faraday-detailed_logger.svg)](https://badge.fury.io/rb/faraday-detailed_logger)
 [![Tests](https://github.com/envylabs/faraday-detailed_logger/workflows/Tests/badge.svg)](https://github.com/envylabs/faraday-detailed_logger/actions?query=workflow%3ATests)
 
+## [2.6.1](https://github.com/envylabs/faraday-detailed_logger/compare/v2.6.0...v2.6.1) (2025-04-20)
+
+
+### Bug Fixes
+
+* re-release of v2.6.0 after release automation corrections ([0deca63](https://github.com/envylabs/faraday-detailed_logger/commit/0deca63ec5dd6dbb2fd4a64d2ef74a0e67df8d33))
+
 ## [2.6.0](https://github.com/envylabs/faraday-detailed_logger/compare/v2.5.0...v2.6.0) (2025-04-20)
 
 
