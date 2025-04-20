@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
   )
   spec.homepage = 'https://github.com/envylabs/faraday-detailed_logger'
   spec.license = 'MIT'
-  spec.required_ruby_version = '>= 2.4.0'
+  spec.required_ruby_version = '>= 3.2'
 
   spec.metadata['bug_tracker_uri'] = 'https://github.com/envylabs/faraday-detailed_logger/issues'
   spec.metadata['changelog_uri'] = 'https://github.com/envylabs/faraday-detailed_logger/blob/main/CHANGELOG.md'
