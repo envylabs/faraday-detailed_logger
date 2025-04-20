@@ -1,7 +1,7 @@
 # Faraday::DetailedLogger changelog
 
 [![Gem Version](https://badge.fury.io/rb/faraday-detailed_logger.svg)](https://badge.fury.io/rb/faraday-detailed_logger)
-[![Tests](https://github.com/envylabs/faraday-detailed_logger/workflows/Tests/badge.svg)](https://github.com/envylabs/faraday-detailed_logger/actions?query=workflow%3ATests)
+[![Tests](https://github.com/envylabs/faraday-detailed_logger/actions/workflows/tests.yml/badge.svg)](https://github.com/envylabs/faraday-detailed_logger/actions/workflows/tests.yml)
 
 ## [2.6.1](https://github.com/envylabs/faraday-detailed_logger/compare/v2.6.0...v2.6.1) (2025-04-20)
 

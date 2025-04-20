@@ -1,7 +1,7 @@
 # Faraday::DetailedLogger
 
 [![Gem Version](https://badge.fury.io/rb/faraday-detailed_logger.svg)](https://badge.fury.io/rb/faraday-detailed_logger)
-[![Tests](https://github.com/envylabs/faraday-detailed_logger/workflows/Tests/badge.svg)](https://github.com/envylabs/faraday-detailed_logger/actions?query=workflow%3ATests)
+[![Tests](https://github.com/envylabs/faraday-detailed_logger/actions/workflows/tests.yml/badge.svg)](https://github.com/envylabs/faraday-detailed_logger/actions/workflows/tests.yml)
 
 A Faraday middleware used for providing debug- and info-level logging
 information. The request and response logs follow very closely with cURL output
