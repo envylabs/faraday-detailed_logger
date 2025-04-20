@@ -1,0 +1,18 @@
+{
+  "packages": {
+    ".": {
+      "bump-minor-pre-major": true,
+      "bump-patch-for-minor-pre-major": false,
+      "changelog-path": "CHANGELOG.md",
+      "component": "",
+      "include-component-in-tag": false,
+      "draft": false,
+      "monorepo-tags": false,
+      "package-name": "faraday-detailed_logger",
+      "prerelease": false,
+      "release-type": "ruby",
+      "version-file": "lib/faraday/detailed_logger/version.rb"
+    }
+  },
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
+}
