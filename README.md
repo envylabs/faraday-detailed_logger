@@ -23,7 +23,7 @@ No headers or bodies are logged at an INFO or greater log level.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "faraday-detailed_logger"
+gem 'faraday-detailed_logger'
 ```
 
 And then execute:
@@ -47,7 +47,7 @@ it into your connection's request/response stack:
 require 'faraday'
 require 'faraday/detailed_logger'
 
-connection = Faraday.new(:url => "http://sushi.com") do |faraday|
+connection = Faraday.new(url: 'http://sushi.com') do |faraday|
   faraday.request  :url_encoded
   faraday.response :detailed_logger # <-- Inserts the logger into the connection.
   faraday.adapter  Faraday.default_adapter
@@ -63,10 +63,10 @@ require 'faraday'
 require 'faraday/detailed_logger'
 require 'logger'
 
-my_logger = Logger.new("logfile.log")
+my_logger = Logger.new('logfile.log')
 my_logger.level = Logger::INFO
 
-connection = Faraday.new(:url => "http://sushi.com") do |faraday|
+connection = Faraday.new(url: 'http://sushi.com') do |faraday|
   faraday.request  :url_encoded
   faraday.response :detailed_logger, my_logger # <-- sets a custom logger.
   faraday.adapter  Faraday.default_adapter
@@ -83,7 +83,7 @@ Further, you might like to tag logged output to make it easily located in your
 logs:
 
 ```ruby
-faraday.response :detailed_logger, Rails.logger, "Sushi Request"
+faraday.response :detailed_logger, Rails.logger, 'Sushi Request'
 ```
 
 ### Example output
