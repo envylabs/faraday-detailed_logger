@@ -1,13 +1,15 @@
 ---
 jobs:
   tests:
+    env:
+      BUNDLE_GEMFILE: "${{ matrix.gemfile }}"
+    name: "Tests"
     runs-on: "ubuntu-latest"
     steps:
       - uses: "actions/checkout@v4"
       - uses: "ruby/setup-ruby@v1"
         with:
-          bundler-cache: "true"
-          ruby-version: "${{ matrix.ruby }}"
+          bundler-cache: true
       - name: "Run Tests"
         run: "bundle exec rake spec"
       - name: "Check Ruby Style"
@@ -28,9 +30,11 @@ jobs:
           - "gemfiles/faraday_0.x.gemfile"
           - "gemfiles/faraday_1.x.gemfile"
           - "gemfiles/faraday_2.x.gemfile"
-        ruby:
-          - "2.7"
-          - "3.2"
 name: "Tests"
 "on":
-  - "push"
+  pull_request:
+    branches:
+      - "main"
+  push:
+    branches:
+      - "main"
