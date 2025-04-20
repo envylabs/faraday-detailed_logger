@@ -3,6 +3,13 @@
 [![Gem Version](https://badge.fury.io/rb/faraday-detailed_logger.svg)](https://badge.fury.io/rb/faraday-detailed_logger)
 [![Tests](https://github.com/envylabs/faraday-detailed_logger/workflows/Tests/badge.svg)](https://github.com/envylabs/faraday-detailed_logger/actions?query=workflow%3ATests)
 
+## [2.6.0](https://github.com/envylabs/faraday-detailed_logger/compare/v2.5.0...v2.6.0) (2025-04-20)
+
+
+### Features
+
+* set minimum Ruby to version 3.2 ([d6e5bd4](https://github.com/envylabs/faraday-detailed_logger/commit/d6e5bd4bf2e375370e03b39f4e8e0f053476517b))
+
 ## [HEAD][] / unreleased
 
 * No significant changes.
