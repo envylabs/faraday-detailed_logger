@@ -12,7 +12,7 @@ jobs:
     runs-on: "ubuntu-latest"
     steps:
       - id: "release"
-        uses: "googleapis/release-please-action@v4"
+        uses: "googleapis/release-please-action@v5"
 
   release:
     if: "${{ needs.release-please.outputs.release_created }}"
